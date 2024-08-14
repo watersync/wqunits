@@ -1,19 +1,19 @@
 import yaml
 import os
 from pathlib import Path
+from pint import UnitRegistry
 
 root_dir: Path = os.path.dirname(__file__)
 
 
-def load_units(ureg):
+def load_units(ureg: UnitRegistry) -> None:
     """
     Load unit definitions from a YAML file into a Pint UnitRegistry.
 
-    Args:
-        yaml_file (str): Path to the YAML file containing unit definitions.
+    Parameters:
         ureg (UnitRegistry): An instance of Pint's UnitRegistry.
     """
-    yaml_file = os.path.join(root_dir, 'wqunits-pint.yaml')
+    yaml_file = os.path.join(root_dir, 'libs/wqunits-pint.yaml')
 
     with open(yaml_file, 'r') as file:
         units_data = yaml.safe_load(file)
@@ -31,19 +31,22 @@ def load_units(ureg):
         ureg.define(pint_definition)
 
 
-def load_molar_mass(element_symbol: str) -> float:
+def load_molar_mass(element_symbol: str) -> float | None:
     """
-    Reads the molar mass of a particular element from the YAML file.
+    Reads the molar mass of a particular element from a YAML file.
 
-    Args:
-        element_symbol (str): The symbol of the element to look up (e.g., 'H' for Hydrogen).
-        yaml_file (str): The path to the YAML file containing element data.
+    The yaml file wit the molar mass data comes 
+    from https://github.com/watersync/molecular-data.
+
+    Parameters:
+        element_symbol (str): The symbol of the element to 
+            look up (e.g., 'H' for Hydrogen).
 
     Returns:
         float: The molar mass of the element, or None if the element is not found.
     """
 
-    elements_data: Path = os.path.join(root_dir, 'elements.yaml')
+    elements_data: Path = os.path.join(root_dir, 'libs/elements.yaml')
 
     with open(elements_data, 'r') as file:
         elements = yaml.safe_load(file)
