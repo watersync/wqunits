@@ -13,9 +13,9 @@ def load_units(ureg: UnitRegistry) -> None:
     Parameters:
         ureg (UnitRegistry): An instance of Pint's UnitRegistry.
     """
-    yaml_file = os.path.join(root_dir, 'libs/wqunits-pint.yaml')
+    custom_units = os.path.join(root_dir, 'libs/wqunits-pint.yaml')
 
-    with open(yaml_file, 'r') as file:
+    with open(custom_units, 'r') as file:
         units_data = yaml.safe_load(file)
 
     for unit_name, unit_info in units_data.get('Units', {}).items():
