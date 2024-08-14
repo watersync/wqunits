@@ -1,0 +1,104 @@
+Version: 1.0.0
+Metadata: &meta
+  Creator: Mateusz Zawadzki
+  Contact: zawadzkimat@outlook.com
+  Date: 2024-08-14
+  Language: EN
+  Format: YAML
+  Subject: Unit definition for wqunits package.
+  Description: Unit definitions in this file extend predefined definitions
+    in pint.
+  Rights: European Union Public License (EUPL)
+
+Units:
+  # Additional volume units
+
+  cubic_meter:
+    definition: "meter ** 3"
+    aliases: ["m3", "qbm"]
+    description: ["Cubic meter"]
+
+  # Additional mass concentration units
+  g_per_L:
+    definition: "gram / liter"
+    aliases: ["g/L"]
+    description: "Grams per liter"
+
+  ng_per_L:
+    definition: "nanogram / liter"
+    aliases: ["ng/L"]
+    description: "Nanograms per liter"
+
+  pg_per_L:
+    definition: "picogram / liter"
+    aliases: ["pg/L"]
+    description: "Picograms per liter"
+
+  # Volume concentration units
+  mL_per_L:
+    definition: "milliliter / liter"
+    aliases: ["mL/L"]
+    description: "Milliliters per liter"
+
+  uL_per_L:
+    definition: "microliter / liter"
+    aliases: ["uL/L"]
+    description: "Microliters per liter"
+
+  # Mass concentration units
+  mg_per_g:
+    definition: "milligram / gram"
+    aliases: ["mg/g"]
+    description: "Milligrams per gram of solid substance"
+
+  ug_per_g:
+    definition: "microgram / gram"
+    aliases: ["ug/g"]
+    description: "Microgram per gram of solid substance"
+
+  # Flow rate units
+  m3_per_h:
+    definition: "cubic_meter / hour"
+    aliases: ["m3/h", "qbm/h"]
+    description: "Cubic meters per hour"
+
+  m3_per_d:
+    definition: "cubic_meter / day"
+    aliases: ["m3/d", "qbm/d"]
+    description: "Cubic meters per hour"
+
+  L_per_s:
+    definition: "liter / second"
+    aliases: ["L/s"]
+    description: "Liters per second"
+
+  mL_per_s:
+    definition: "milliliter / second"
+    aliases: ["mL/s"]
+    description: "Milliliters per second"
+
+  # Custom water quality units
+  ntu:
+    definition: "1"
+    description: "Nephelometric Turbidity Units (dimensionless)"
+
+  tss:
+    definition: "gram / liter"
+    aliases: ["TSS"]
+    description: "Total Suspended Solids in grams per liter"
+
+  bods:
+    definition: "milligram / liter"
+    aliases: ["BODs"]
+    description: "Biochemical Oxygen Demand in milligrams per liter"
+
+  # Electrical conductivity (often measured in water)
+  uS_per_cm:
+    definition: "microsiemens / centimeter"
+    aliases: ["uS/cm"]
+    description: "Microsiemens per centimeter"
+
+  mS_per_cm:
+    definition: "millisiemens / centimeter"
+    aliases: ["mS/cm"]
+    description: "Millisiemens per centimeter"
